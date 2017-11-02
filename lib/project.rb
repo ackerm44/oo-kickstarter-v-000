@@ -6,7 +6,7 @@ class Project
     @backers = []
   end
 
-  def self.find(backer)
+  def find(backer)
     backer.backed_projects.detect {|p| p != self}
 
   def add_backer(backer)
