@@ -8,6 +8,7 @@ class Project
 
   def find(backer)
     backer.backed_projects.detect {|p| p != self}
+  end
 
   def add_backer(backer)
     @backers << backer
