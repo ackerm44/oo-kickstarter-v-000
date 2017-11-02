@@ -6,10 +6,12 @@ class Project
     @backers = []
   end
 
+  def self.find(backer)
+    backer.backed_projects.detect {|p| p != self}
+
   def add_backer(backer)
     @backers << backer
-    if backer.backed_projects != self
-      backer.back_project(self)
+    ||backer.back_project(self) 
     end
   end
 
